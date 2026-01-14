@@ -1,0 +1,143 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "ECS",
+        "description": "由OpenAPI创建的默认分组",
+        "version": "1761612177"
+    },
+    "servers": [
+
+    ],
+    "paths": {
+        "/ecs/v1/backups/restoring": {
+            "get": {
+                "operationId": "query-backing-ecs-num",
+                "summary": "query-backing-ecs-num",
+                "description": "查询正在恢复中云服务器数量",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "description": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "x-auth-token",
+                        "description": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://x86-int.inspurcloud.cn"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "x-inspurcloud-apig-error-info": "原生swagger默认错误信息"
+                    }
+                }
+            }
+        },
+        "/ecs/v1.1/servers/{pageNo}/{pageSize}": {
+            "get": {
+                "operationId": "query-ecs-list",
+                "summary": "query-ecs-list",
+                "description": "查询云服务器列表",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "description": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "pageNo",
+                        "description": "页码",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "分页大小",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": ""
+                        }
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://x86-int.inspurcloud.cn"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "x-inspurcloud-apig-error-info": "原生swagger默认错误信息"
+                    }
+                }
+            }
+        },
+        "/ecs/v1/backups/{backup_id}": {
+            "get": {
+                "operationId": "query-ecs-backup-detail",
+                "summary": "query-ecs-backup-detail",
+                "description": "查询云服务器备份详情\r\n",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "description": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "backup_id",
+                        "description": "云服务器备份id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://x86-int.inspurcloud.cn"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "x-inspurcloud-apig-error-info": "原生swagger默认错误信息"
+                    }
+                }
+            }
+        }
+    }
+}

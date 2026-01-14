@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-adapter"
+version = "1.0.0"
+description = "MCP Adapter to convert OpenAPI to MCP application automatically"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "anyio>=4.11.0",
+    "argparse>=1.4.0",
+    "fastmcp>=2.12.4",
+    "httpx>=0.28.1",
+    "kopf>=1.38.0",
+    "openapi-spec-validator>=0.7.2",
+    "prance>=25.4.8.0",
+]
+
+[project.scripts]
+mcp-adapter = "mcp_adapter.adapter:main"
+
+[tool.setuptools]
+include-package-data = true
+packages = { find = {where = ["src"]} }
+
+[[tool.uv.index]]
+defautl = true
+url = "http://mirrors.aliyun.com/pypi/simple/"

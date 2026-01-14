@@ -1,0 +1,241 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "ECS",
+        "description": "由OpenAPI创建的默认分组",
+        "version": "1761549392"
+    },
+    "servers": [
+
+    ],
+    "paths": {
+        "/ecs/v1/backups/restoring": {
+            "get": {
+                "operationId": "查询正在恢复中云服务器数量",
+                "description": "",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "description": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://x86-int.inspurcloud.cn"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "x-inspurcloud-apig-error-info": "原生swagger默认错误信息"
+                    }
+                }
+            }
+        },
+        "/ecs/v1.1/servers/{pageNo}/{pageSize}": {
+            "get": {
+                "operationId": "查询云服务器列表",
+                "description": "",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "description": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "pageNo",
+                        "description": "页码",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "分页大小",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": ""
+                        }
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://x86-int.inspurcloud.cn"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "x-inspurcloud-apig-error-info": "原生swagger默认错误信息"
+                    }
+                }
+            }
+        },
+        "/ecs/v1/backups/{backup_id}": {
+            "get": {
+                "operationId": "查询云服务器备份详情",
+                "description": "",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "description": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "backup_id",
+                        "description": "云服务器备份id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://x86-int.inspurcloud.cn"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "x-inspurcloud-apig-error-info": "原生swagger默认错误信息"
+                    }
+                }
+            }
+        },
+        "/ecs/v1/backups/{pageNo}/{pageSize}": {
+            "get": {
+                "operationId": "查询云服务器备份列表",
+                "description": "",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "description": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "pageNo",
+                        "description": "页码",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "分页大小",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": ""
+                        }
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://x86-int.inspurcloud.cn"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "x-inspurcloud-apig-error-info": "原生swagger默认错误信息"
+                    }
+                }
+            }
+        },
+        "/ecs/v1/commands/invocation": {
+            "get": {
+                "operationId": "查询windows云服务器命令执行结果GET",
+                "description": "",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "description": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://x86-int.inspurcloud.cn"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "x-inspurcloud-apig-error-info": "原生swagger默认错误信息"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "查询windows云服务器命令执行结果POST",
+                "description": "",
+                "summary": "",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "description": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                ],
+                "servers": [
+                    {
+                        "url": "https://x86-int.inspurcloud.cn"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "x-inspurcloud-apig-error-info": "原生swagger默认错误信息"
+                    }
+                }
+            }
+        }
+    }
+}

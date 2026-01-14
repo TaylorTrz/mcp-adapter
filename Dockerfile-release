@@ -1,0 +1,24 @@
+FROM mcp-adapter:base
+
+WORKDIR /app
+
+COPY ./src/ ./src/
+COPY uv.lock pyproject.toml README.md Makefile ./
+
+ENV UV_HTTP_TIMEOUT 120
+ENV MIRROR_HOST mirrors.aliyun.com
+ENV MIRROR_URL http://mirrors.aliyun.com/pypi/simple/
+
+RUN  pip config set global.index-url $MIRROR_URL && \
+     pip config set install.trusted-host $MIRROR_HOST && \
+     pip config set download.timeout 60 && \
+     pip config set global.no-cache-dir true
+
+RUN  . .venv/bin/activate && \
+     uv sync -v && \
+     uv build --wheel -v . && \
+     uv pip install -v --find-links dist/ . && \
+     uv clean --force && \
+     find . -mindepth 1 -not -path "./.venv*" | xargs -I {} rm -rf {} 
+
+CMD [".venv/bin/mcp-adapter", "-k"]
